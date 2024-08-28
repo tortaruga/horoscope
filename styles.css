@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+:root {
+    --dark: #006d77;
+    --medium: #83c5be;
+    --light: #edf6f9;
+
+
+* { 
+    box-sizing: border-box;
+}}
+
+body {
+    background: var(--dark);
+    color: var(--medium);
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: .05rem;
+    line-height: 1.5;
+    font-family: 'marcellus', serif;
+}
+
+a {
+    color: var(--light);
+    text-decoration:none;
+}
+
+a:hover {
+    color: #02292b;
+    font-weight: bold;
+}
+
+.main-heading {
+    font-family: 'playfair display', serif;
+    color: var(--light);
+    font-size: 4rem;
+    line-height: .8;
+    max-width: min-content;
+    margin: auto;
+    color: var(--medium);
+    padding-top: 3rem;
+}
+
+.accent {
+    /* color: var(--medium); */
+    color: var(--light);
+}
+
+main {
+    margin-block: 8rem;
+}
+
+.container {
+    display: flex; 
+    width: 100vw;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    max-width:100%;
+    gap: .5rem;
+}
+
+.zodiac-card {
+    scroll-snap-align: start;
+    min-width: 95%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.outer-wrapper {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 350px;
+    border-radius: .8rem;  
+    background: linear-gradient(hsl(0, 0%, 0%, .4), hsl(0, 0%, 0%, .2)); 
+    color:var(--medium); 
+    gap: 2rem; 
+    padding: 2rem;
+    text-shadow: 0 0 8px var(--medium);
+    box-shadow: .5rem .4rem 10px rgba(4, 43, 48, 0.247);
+    text-align: justify;
+ }
+
+
+.zodiac-img {
+    width: 128px;
+    filter: saturate(1) brightness(1.2);
+    opacity: .8;
+}
+
+.img-wrapper {
+    background: linear-gradient(-45deg, hsla(175, 36%, 64%, 0.658), hsla(175, 36%, 64%, 0.404));
+    border-radius: 50%;
+    padding: 1.5rem; 
+    border: 1px solid var(--medium);
+    box-shadow: 0 0 5px var(--light);
+    width: max-content;
+    margin:auto;
+}
+
+.horoscope {
+    max-width: 300px;
+}
+
+.instructions-desktop {
+    display:none;
+}
+
+@media screen and (min-width: 700px) {
+    .instructions-mobile {
+        display:none;
+    }
+
+    
+    .instructions-desktop {
+        display:inline-block;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin:auto;
+        mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+    }
+  
+    .zodiac-card {
+        min-width: 40%;
+    }   
+
+    .zodiac-img {
+        width: 128px;
+    }
+    
+    .tilt-left {
+        transform: rotate(-0.6deg);
+    }
+
+    .tilt-right {
+        transform: rotate(0.4deg);
+    }
+
+}
